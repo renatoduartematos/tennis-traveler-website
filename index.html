@@ -719,5 +719,19 @@
 
   calc();
 </script>
+  <!-- Booking success banner -->
+  <div id="booking-success" style="display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:#0b3d2e;color:#f4efe4;padding:18px 24px;text-align:center;align-items:center;justify-content:center;gap:16px;box-shadow:0 2px 12px rgba(0,0,0,0.3);">
+      <span style="font-size:1.1rem;font-weight:500;">Booking confirmed! Check your inbox - we'll email you within 2 hours.</span>span>
+      <button onclick="document.getElementById('booking-success').style.display='none'" style="margin-left:16px;background:transparent;border:1px solid #f4efe4;color:#f4efe4;padding:4px 14px;cursor:pointer;border-radius:4px;font-size:0.9rem;">X</button>button>
+  </div>div>
+  <script>
+      if (new URLSearchParams(window.location.search).get('booked') === '1') {
+            window.addEventListener('DOMContentLoaded', function() {
+                    var banner = document.getElementById('booking-success');
+                    if (banner) { banner.style.display = 'flex'; window.scrollTo(0,0); }
+            });
+      }
+        </script>
+  </script>
 </body>
 </html>
